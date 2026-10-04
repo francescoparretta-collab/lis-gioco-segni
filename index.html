@@ -101,6 +101,9 @@
   .parte { display:flex; flex-direction:column }
   /* GIOCO (?gioco, 4/10/2026): l'esempio del segno e il punteggio */
   .esempio { display:block; max-width:100%; margin:8px auto 4px; border-radius:10px; border:1px solid var(--bordo, #d4d4dc) }
+  .citta-lista { display:flex; flex-wrap:wrap; gap:6px; margin:8px 0 }
+  .citta-lista button { flex:1 1 30%; margin:0; padding:10px 6px }
+  #box-citta input { width:100%; box-sizing:border-box; margin:4px 0 6px }
   video.esempio { width:100%; max-width:260px; height:auto }   /* il video d'esempio non deve riempire lo schermo: sotto ci sono la tua immagine e il segno */
   .punti-gioco { text-align:center; font-weight:700; font-size:16px; margin-top:4px }
   .ruolo { margin:10px 0 4px; font-size:15px }
@@ -148,6 +151,7 @@
       <li><b>Cosa parte:</b> solo numeri. Sono le posizioni di mani, viso (bocca,
           occhi, sopracciglia) e spalle. Niente video, niente foto.</li>
       <li><b>Il nome:</b> puoi usare un soprannome. Può comparire nella <b>classifica</b> con i tuoi punti.</li>
+      <li><b>La città:</b> è facoltativa. Solo se premi "Segno variante" puoi dire di quale città è la variante. Serve a distinguere le varianti.</li>
       <li><b>Puoi fermarti</b> quando vuoi.</li>
       <li><b>Puoi chiedere di cancellare</b> i tuoi dati: scrivi a Francesco
           il nome che hai usato qui.</li>
@@ -193,7 +197,7 @@
     Computer: la webcam all'altezza degli occhi.<br><br>
     <b>Guarda l'esempio e fai il segno.</b><br>
     Il video è un modo di fare il segno.<br>
-    Se tu lo fai diverso, premi "Lo faccio diverso" e segna come fai tu.<br><br>
+    Se tu lo fai in un altro modo, premi "Segno variante" e segna come fai tu.<br><br>
     <b>Segna come fai normalmente.</b><br>
     Usa il tuo labiale e le tue espressioni.<br>
     Non rallentare.<br>
@@ -305,12 +309,24 @@
   <div class="stato" id="stato">Avvio…</div>
   <div class="barra"><i id="barra-seq" style="background:var(--attesa)"></i></div>
   <button id="btn-rifai" class="secondario" style="display:none" disabled>Rifai l'ultima</button>
-  <button id="btn-altro" class="secondario" style="display:none">Lo faccio diverso</button>
-  <p class="tenue" id="nota-altro" style="display:none;font-size:13px;margin:-4px 0 6px">Il disegno è un modo di fare il segno. Se tu lo fai diverso, premi qui.</p>
+  <button id="btn-altro" class="secondario" style="display:none">Segno variante</button>
+  <p class="tenue" id="nota-altro" style="display:none;font-size:13px;margin:-4px 0 6px">L'esempio è un modo di fare il segno. Se tu lo fai in un altro modo, premi qui.</p>
+  <!-- 4/10/2026, l'utente: "Segno variante, poi clicca capoluogo Roma, Milano, Torino, Napoli, Palermo, Firenze, Bologna" + "Altra città".
+       La città si sceglie UNA volta (resta su questo dispositivo) e si puo' cambiare. Facoltativa: c'e' anche "Non so". -->
+  <div class="riquadro" id="box-citta" style="display:none;font-size:14px">
+    <b>Di quale città è questa variante?</b>
+    <div class="citta-lista" id="citta-lista"></div>
+    <input id="citta-altra" placeholder="Altra città: scrivi il nome" maxlength="24" autocomplete="off" autocapitalize="off" spellcheck="false">
+    <button id="citta-ok" class="secondario">Altra città: ok</button>
+    <button id="citta-nonso" class="secondario">Non so / è il mio modo</button>
+  </div>
+  <p class="tenue" id="citta-scelta" style="display:none;font-size:13px;margin:-4px 0 6px">Variante di: <b id="citta-nome"></b> · <a href="#" id="citta-cambia">cambia</a></p>
   <button id="btn-salta" class="secondario">Salta</button>
   <!-- Prima, chi si stancava a meta' e chiudeva la pagina perdeva tutto.
        Con questo puo' fermarsi quando vuole e mandare lo stesso. -->
   <button id="btn-finito" class="secondario">Ho finito, manda</button>
+  <!-- 4/10/2026, l'utente: "AGGIUNGERE TORNA HOME" (solo nel gioco): torna subito alla lista dei gruppi, mandando quello che c'e' in attesa -->
+  <button id="btn-home" class="secondario" style="display:none">Torna alla home</button>
   </div>
 </div>
 
@@ -330,6 +346,6 @@
   <button id="btn-ancora" class="secondario">Registra ancora</button>
 </div>
 
-<script type="module" src="gioco.js?v=2610041800"></script>
+<script type="module" src="gioco.js?v=2610041829"></script>
 </body>
 </html>
