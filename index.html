@@ -159,15 +159,7 @@
     </label>
   </div>
 
-  <!-- GIOCO (?gioco): chi gioca dice se conosce la LIS. I dati di chi sta imparando vanno in quarantena e li guarda Francesco. -->
-  <div class="riquadro ruolo" id="blocco-ruolo">
-    <b>Tu come stai con la LIS?</b>
-    <label><input type="radio" name="ruolo" value="esperto" checked>
-      <span>Sono sordo/a o segno la LIS bene</span></label>
-    <label><input type="radio" name="ruolo" value="allievo">
-      <span>Sto imparando la LIS</span></label>
-  </div>
-
+  <!-- 4/10/2026, l'utente: la domanda "Tu come stai con la LIS?" NON SERVE: tolta. I dati di chi non e' fidato vanno comunque in quarantena (per nome, scarica_da_supabase.py). -->
   <input id="nome" placeholder="Il tuo nome o un soprannome" autocomplete="off"
          autocapitalize="off" spellcheck="false">
   <p class="tenue" style="font-size:13px">Solo lettere e numeri. Senza spazi.</p>
@@ -338,6 +330,6 @@
   <button id="btn-ancora" class="secondario">Registra ancora</button>
 </div>
 
-<script type="module" src="gioco.js?v=2610041757"></script>
+<script type="module" src="gioco.js?v=2610041800"></script>
 </body>
 </html>
