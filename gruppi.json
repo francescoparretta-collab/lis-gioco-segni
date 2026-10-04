@@ -1,0 +1,257 @@
+{
+ "gruppi": [
+  {
+   "id": "alfabeto",
+   "nome": "Alfabeto",
+   "livello": 1,
+   "segni": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "O",
+    "P",
+    "Q",
+    "R",
+    "S",
+    "T",
+    "U",
+    "V",
+    "W",
+    "X",
+    "Y",
+    "Z"
+   ]
+  },
+  {
+   "id": "numeri",
+   "nome": "Numeri",
+   "livello": 1,
+   "segni": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+    "20",
+    "30",
+    "40",
+    "50"
+   ]
+  },
+  {
+   "id": "animali",
+   "nome": "Animali",
+   "livello": 1,
+   "segni": [
+    "cane",
+    "gatto",
+    "cavallo",
+    "mucca",
+    "pesce",
+    "uccello",
+    "coniglio"
+   ]
+  },
+  {
+   "id": "mezzi",
+   "nome": "Mezzi di trasporto",
+   "livello": 1,
+   "segni": [
+    "auto",
+    "moto",
+    "nave",
+    "aereo",
+    "treno",
+    "metro",
+    "tram"
+   ]
+  },
+  {
+   "id": "colori",
+   "nome": "Colori",
+   "livello": 1,
+   "segni": [
+    "rosso",
+    "giallo",
+    "verde",
+    "blu",
+    "marrone",
+    "bianco"
+   ]
+  },
+  {
+   "id": "famiglia",
+   "nome": "Famiglia",
+   "livello": 1,
+   "segni": [
+    "mamma",
+    "papa",
+    "figlio",
+    "fratello",
+    "sorella",
+    "zio",
+    "moglie",
+    "marito"
+   ]
+  },
+  {
+   "id": "cibo",
+   "nome": "Cibo e bevande",
+   "livello": 2,
+   "segni": [
+    "caffe",
+    "latte",
+    "the",
+    "cornetto",
+    "biscotto",
+    "cappuccino",
+    "pasta",
+    "acqua",
+    "cocacola",
+    "fanta"
+   ]
+  },
+  {
+   "id": "tempo",
+   "nome": "Giorni e tempo",
+   "livello": 2,
+   "segni": [
+    "lunedi",
+    "martedi",
+    "mercoledi",
+    "giovedi",
+    "venerdi",
+    "sabato",
+    "domenica",
+    "oggi",
+    "ieri",
+    "domani",
+    "mattina",
+    "pomeriggio",
+    "sera",
+    "notte"
+   ]
+  },
+  {
+   "id": "saluti",
+   "nome": "Saluti",
+   "livello": 2,
+   "segni": [
+    "ciao",
+    "grazie",
+    "scusa",
+    "come_stai",
+    "piacere_conoscerti"
+   ]
+  },
+  {
+   "id": "luoghi",
+   "nome": "Luoghi e città",
+   "livello": 2,
+   "segni": [
+    "casa",
+    "scuola",
+    "ufficio",
+    "lavoro",
+    "ospedale",
+    "banca",
+    "poste",
+    "roma",
+    "napoli",
+    "milano",
+    "firenze",
+    "torino",
+    "palermo",
+    "mare",
+    "montagna"
+   ]
+  },
+  {
+   "id": "sport",
+   "nome": "Sport",
+   "livello": 2,
+   "segni": [
+    "sport",
+    "calcio",
+    "pallavolo",
+    "pallacanestro",
+    "padel"
+   ]
+  },
+  {
+   "id": "scuola",
+   "nome": "Scuola e lingue",
+   "livello": 3,
+   "segni": [
+    "matematica",
+    "storia",
+    "geografia",
+    "italiano",
+    "lis",
+    "lingua",
+    "materie"
+   ]
+  },
+  {
+   "id": "verbi",
+   "nome": "Verbi",
+   "livello": 3,
+   "segni": [
+    "mangiare",
+    "andare",
+    "venire",
+    "studiare",
+    "scrivere",
+    "guardare",
+    "vedere",
+    "uscire",
+    "correre",
+    "imparare",
+    "conoscere",
+    "capire",
+    "aiutare",
+    "insegnare"
+   ]
+  },
+  {
+   "id": "stati",
+   "nome": "Stati e sentimenti",
+   "livello": 3,
+   "segni": [
+    "stanco",
+    "nervoso",
+    "calmo",
+    "permaloso",
+    "simpatico",
+    "bene",
+    "male",
+    "sete",
+    "mal_di_testa",
+    "mal_di_pancia",
+    "caldo",
+    "freddo"
+   ]
+  }
+ ]
+}

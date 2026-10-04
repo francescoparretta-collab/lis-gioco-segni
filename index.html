@@ -103,6 +103,16 @@
   .esempio { display:block; max-width:100%; margin:8px auto 4px; border-radius:10px; border:1px solid var(--bordo, #d4d4dc) }
   .punti-gioco { text-align:center; font-weight:700; font-size:16px; margin-top:4px }
   .ruolo { margin:10px 0 4px; font-size:15px }
+  /* v2 (4/10/2026): gruppi per tema, livelli, classifica */
+  .livello-titolo { margin:18px 0 6px; font-size:15px; font-weight:700; color:var(--tenue) }
+  .gruppo { display:flex; justify-content:space-between; align-items:center; gap:10px; width:100%; text-align:left; margin:6px 0; padding:14px 16px }
+  .gruppo .nome { font-weight:700; font-size:17px }
+  .gruppo .dett { font-size:13px; opacity:.8; margin-top:2px }
+  .gruppo .stelle { font-size:20px; white-space:nowrap }
+  .totale-punti { text-align:center; font-size:20px; font-weight:800; margin:6px 0 2px }
+  .riga-classifica { display:flex; justify-content:space-between; padding:6px 2px; border-bottom:1px solid rgba(0,0,0,.08); font-size:16px }
+  .riga-classifica b { font-weight:700 }
+  #btn-altro.attivo { background:var(--ok, #1b7f3a); color:#fff }
   .ruolo label { display:flex; gap:8px; align-items:flex-start; margin:6px 0; line-height:1.35 }
   .ruolo input { margin-top:4px }
   .parte .quanto { color:var(--tenue); font-size:15px; font-weight:600 }
@@ -136,7 +146,7 @@
       <li><b>Perché:</b> insegnare a un computer a riconoscere la LIS.</li>
       <li><b>Cosa parte:</b> solo numeri. Sono le posizioni di mani, viso (bocca,
           occhi, sopracciglia) e spalle. Niente video, niente foto.</li>
-      <li><b>Il nome:</b> puoi usare un soprannome.</li>
+      <li><b>Il nome:</b> puoi usare un soprannome. Può comparire nella <b>classifica</b> con i tuoi punti.</li>
       <li><b>Puoi fermarti</b> quando vuoi.</li>
       <li><b>Puoi chiedere di cancellare</b> i tuoi dati: scrivi a Francesco
           il nome che hai usato qui.</li>
@@ -227,6 +237,30 @@
   <button id="btn-menu-fine" class="secondario">Ho finito</button>
 </div>
 
+<!-- GIOCO v2: la scelta del gruppo -->
+<div id="s-gruppi" class="schermo">
+  <h1>Scegli un gruppo</h1>
+  <div class="totale-punti" id="totale-punti">★ 0</div>
+  <p class="tenue" style="text-align:center;margin:0 0 6px" id="sottotitolo-punti">Ogni segno fatto bene dà punti: livello 1 = 1 punto, livello 2 = 2, livello 3 = 3.</p>
+  <label class="spunta" style="margin:8px 0">
+    <input type="checkbox" id="mostra-esempio" checked>
+    <span>Mostra l'esempio di come si fa il segno</span>
+  </label>
+  <div id="lista-gruppi"></div>
+  <button id="btn-mista" class="secondario">Partita mista (10 segni a caso)</button>
+  <button id="btn-classifica" class="secondario">Classifica</button>
+  <div class="riquadro" id="box-classifica" style="display:none"></div>
+  <button id="btn-fine-gioco" class="secondario" style="margin-top:14px">Ho finito di giocare</button>
+</div>
+
+<div id="s-risultato" class="schermo">
+  <h1 id="ris-titolo">Partita finita</h1>
+  <div class="totale-punti" id="ris-punti">★ 0</div>
+  <p class="tenue" style="text-align:center" id="ris-testo"></p>
+  <button id="btn-altro-gruppo">Un altro gruppo</button>
+  <button id="btn-fine-gioco2" class="secondario">Ho finito di giocare</button>
+</div>
+
 <div id="s-registra" class="schermo">
   <!-- 2/10/2026, l'utente: "sotto non vedo bene, meglio sopra destra". Tre blocchi: sul telefono (stretto) restano uno sotto l'altro come prima;
        su uno schermo largo (PC, telefono orizzontale) il VIDEO sta a sinistra e frase, messaggi e pulsanti stanno in ALTO A DESTRA, senza scorrere. -->
@@ -273,6 +307,7 @@
   <div class="stato" id="stato">Avvio…</div>
   <div class="barra"><i id="barra-seq" style="background:var(--attesa)"></i></div>
   <button id="btn-rifai" class="secondario" style="display:none" disabled>Rifai l'ultima</button>
+  <button id="btn-altro" class="secondario" style="display:none">Lo faccio in un altro modo</button>
   <button id="btn-salta" class="secondario">Salta</button>
   <!-- Prima, chi si stancava a meta' e chiudeva la pagina perdeva tutto.
        Con questo puo' fermarsi quando vuole e mandare lo stesso. -->
@@ -296,6 +331,6 @@
   <button id="btn-ancora" class="secondario">Registra ancora</button>
 </div>
 
-<script type="module" src="gioco.js?v=2610041606"></script>
+<script type="module" src="gioco.js?v=2610041636"></script>
 </body>
 </html>
