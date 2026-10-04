@@ -101,6 +101,7 @@
   .parte { display:flex; flex-direction:column }
   /* GIOCO (?gioco, 4/10/2026): l'esempio del segno e il punteggio */
   .esempio { display:block; max-width:100%; margin:8px auto 4px; border-radius:10px; border:1px solid var(--bordo, #d4d4dc) }
+  video.esempio { width:100%; max-width:260px; height:auto }   /* il video d'esempio non deve riempire lo schermo: sotto ci sono la tua immagine e il segno */
   .punti-gioco { text-align:center; font-weight:700; font-size:16px; margin-top:4px }
   .ruolo { margin:10px 0 4px; font-size:15px }
   /* v2 (4/10/2026): gruppi per tema, livelli, classifica */
@@ -242,6 +243,10 @@
   <h1>Scegli un gruppo</h1>
   <div class="totale-punti" id="totale-punti">★ 0</div>
   <p class="tenue" style="text-align:center;margin:0 0 6px" id="sottotitolo-punti">Ogni segno fatto bene dà punti: livello 1 = 1 punto, livello 2 = 2, livello 3 = 3.</p>
+  <label class="spunta" style="margin:8px 0">
+    <input type="checkbox" id="mostra-esempio" checked>
+    <span>Mostra l'esempio di come si fa il segno</span>
+  </label>
   <div id="lista-gruppi"></div>
   <button id="btn-mista" class="secondario">Partita mista (10 segni a caso)</button>
   <button id="btn-classifica" class="secondario">Classifica</button>
@@ -265,6 +270,8 @@
   <div class="riquadro" id="box-segno">
     <div class="conteggio"><span id="idx-segno"></span></div>
     <div class="segno" id="nome-segno">—</div>
+    <video id="video-esempio" class="esempio" muted loop autoplay playsinline style="display:none"></video>
+    <img id="esempio-segno" class="esempio" alt="Esempio di come si fa il segno" style="display:none">
     <div class="barra"><i id="barra-segno"></i></div>
     <div class="conteggio" id="conteggio">0 / 10</div>
     <div class="punti-gioco" id="punti-gioco" style="display:none"></div>
@@ -302,7 +309,8 @@
   <div class="stato" id="stato">Avvio…</div>
   <div class="barra"><i id="barra-seq" style="background:var(--attesa)"></i></div>
   <button id="btn-rifai" class="secondario" style="display:none" disabled>Rifai l'ultima</button>
-  <button id="btn-altro" class="secondario" style="display:none">Lo faccio in un altro modo</button>
+  <button id="btn-altro" class="secondario" style="display:none">Lo faccio diverso</button>
+  <p class="tenue" id="nota-altro" style="display:none;font-size:13px;margin:-4px 0 6px">Il disegno è un modo di fare il segno. Se tu lo fai diverso, premi qui.</p>
   <button id="btn-salta" class="secondario">Salta</button>
   <!-- Prima, chi si stancava a meta' e chiudeva la pagina perdeva tutto.
        Con questo puo' fermarsi quando vuole e mandare lo stesso. -->
@@ -326,6 +334,6 @@
   <button id="btn-ancora" class="secondario">Registra ancora</button>
 </div>
 
-<script type="module" src="gioco.js?v=2610041642"></script>
+<script type="module" src="gioco.js?v=2610041727"></script>
 </body>
 </html>
