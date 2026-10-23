@@ -105,6 +105,12 @@
   .citta-lista button { flex:1 1 30%; margin:0; padding:10px 6px }
   #box-citta input { width:100%; box-sizing:border-box; margin:4px 0 6px }
   video.esempio { width:100%; max-width:260px; height:auto }   /* il video d'esempio non deve riempire lo schermo: sotto ci sono la tua immagine e il segno */
+  /* 23/10/2026: il video YouTube di una persona sorda. 16:9, poco piu' largo dell'esempio. NON e' un <video>: non si specchia. */
+  .cornice-yt { position:relative; width:100%; max-width:360px; aspect-ratio:16/9; margin:8px auto 4px }
+  .cornice-yt iframe { position:absolute; inset:0; width:100%; height:100%; border:0; border-radius:10px; background:#000 }
+  #nota-persona { font-size:13px; text-align:center; margin:2px 0 }
+  .riga-persona { display:flex; gap:8px }
+  .riga-persona button { margin-top:6px; padding:10px }
   .punti-gioco { text-align:center; font-weight:700; font-size:16px; margin-top:4px }
   .ruolo { margin:10px 0 4px; font-size:15px }
   /* v2 (4/10/2026): gruppi per tema, livelli, classifica */
@@ -272,6 +278,17 @@
     <div class="segno" id="nome-segno">—</div>
     <video id="video-esempio" class="esempio" muted loop autoplay playsinline style="display:none"></video>
     <img id="esempio-segno" class="esempio" alt="Esempio di come si fa il segno" style="display:none">
+    <!-- 23/10/2026: "Guarda una persona sorda": un pezzo di un video YouTube in LIS, controllato a mano (elenco in video_lis.json).
+         Il video NON e' copiato: e' il video di YouTube dentro la pagina, da un secondo all'altro. Il bottone c'e' solo per i segni che hanno un video. -->
+    <button id="btn-persona" class="secondario" style="display:none">▶ Guarda una persona sorda</button>
+    <div id="box-persona" style="display:none">
+      <div class="cornice-yt"><iframe id="yt-persona" title="Video YouTube in LIS" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>
+      <p class="tenue" id="nota-persona"></p>
+      <div class="riga-persona">
+        <button id="btn-persona-altro" class="secondario">Un'altra persona</button>
+        <button id="btn-persona-chiudi" class="secondario">Chiudi</button>
+      </div>
+    </div>
     <div class="barra"><i id="barra-segno"></i></div>
     <div class="conteggio" id="conteggio">0 / 10</div>
     <div class="punti-gioco" id="punti-gioco" style="display:none"></div>
@@ -346,6 +363,6 @@
   <button id="btn-ancora" class="secondario">Registra ancora</button>
 </div>
 
-<script type="module" src="gioco.js?v=2610042149"></script>
+<script type="module" src="gioco.js?v=2610231646"></script>
 </body>
 </html>
